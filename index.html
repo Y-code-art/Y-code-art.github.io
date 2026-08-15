@@ -1,561 +1,235 @@
+AI Trading Tools — Index.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Trading Tools</title>
 
-<title>AI Trading Tools</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    background:#080b12;
-    color:#fff;
-}
-
-header{
-    background:#0d111b;
-    padding:18px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid #222936;
-    position:sticky;
-    top:0;
-    z-index:10;
-}
-
-.logo{
-    font-size:23px;
-    font-weight:bold;
-    color:#00e5ff;
-}
-
-nav a{
-    color:#aaa;
-    text-decoration:none;
-    margin-left:20px;
-}
-
-nav a:hover{
-    color:#00e5ff;
-}
-
-.hero{
-    text-align:center;
-    padding:55px 20px 35px;
-}
-
-.hero h1{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-.hero h1 span{
-    color:#00e5ff;
-}
-
-.hero p{
-    color:#9da5b4;
-    font-size:17px;
-}
-
-.container{
-    width:92%;
-    max-width:1200px;
-    margin:auto;
-}
-
-.market{
-    background:#101620;
-    border:1px solid #202936;
-    border-radius:16px;
-    padding:22px;
-    margin-bottom:25px;
-}
-
-.market-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-.symbol{
-    font-size:24px;
-    font-weight:bold;
-}
-
-.price{
-    font-size:30px;
-    color:#00e5ff;
-}
-
-.up{
-    color:#19e68c;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin:25px 0;
-}
-
-.card{
-    background:#101620;
-    border:1px solid #202936;
-    border-radius:16px;
-    padding:22px;
-}
-
-.card h2{
-    font-size:19px;
-    margin-bottom:15px;
-}
-
-.card p{
-    color:#9da5b4;
-    line-height:1.6;
-}
-
-.signal{
-    text-align:center;
-}
-
-.signal-box{
-    background:#09251b;
-    border:1px solid #16b878;
-    border-radius:12px;
-    padding:18px;
-    margin-top:15px;
-}
-
-.signal-box h3{
-    color:#19e68c;
-    font-size:26px;
-}
-
-button{
-    width:100%;
-    border:0;
-    padding:13px;
-    margin-top:15px;
-    border-radius:9px;
-    background:#00c8e8;
-    color:#001015;
-    font-weight:bold;
-    font-size:15px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#00e5ff;
-}
-
-input,select{
-    width:100%;
-    padding:12px;
-    margin-top:8px;
-    margin-bottom:12px;
-    background:#080b12;
-    color:#fff;
-    border:1px solid #303947;
-    border-radius:8px;
-}
-
-.result{
-    background:#080b12;
-    padding:14px;
-    border-radius:10px;
-    color:#00e5ff;
-    margin-top:10px;
-}
-
-.tools{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:12px;
-    margin-top:15px;
-}
-
-.tool{
-    padding:18px;
-    background:#080b12;
-    border:1px solid #293241;
-    border-radius:12px;
-    text-align:center;
-}
-
-.tool strong{
-    display:block;
-    color:#00e5ff;
-    margin-bottom:7px;
-}
-
-footer{
-    text-align:center;
-    padding:35px;
-    color:#687384;
-    border-top:1px solid #202936;
-    margin-top:50px;
-}
-
-@media(max-width:600px){
-    .hero h1{
-        font-size:31px;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
     }
 
-    nav{
-        display:none;
+    body {
+      background: #0b1020;
+      color: white;
     }
 
-    .price{
-        font-size:24px;
+    header {
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #202943;
+      background: #0b1020;
     }
-}
-</style>
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #00e5ff;
+    }
+
+    nav a {
+      color: #c8d0e0;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .hero {
+      padding: 80px 7%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #00e5ff;
+    }
+
+    .hero p {
+      color: #aeb8cc;
+      font-size: 18px;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background: #00e5ff;
+      color: #061018;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 50px 7%;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 35px;
+      font-size: 32px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #121a2e;
+      border: 1px solid #26314d;
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #00e5ff;
+    }
+
+    .card p {
+      color: #aeb8cc;
+      line-height: 1.5;
+    }
+
+    .chart {
+      height: 320px;
+      background: #10182b;
+      border: 1px solid #26314d;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #9da8bd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #202943;
+      color: #7f8aa3;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">⚡ AI TradeX</div>
+  <div class="logo">AI <span>Trading</span></div>
 
-    <nav>
-        <a href="#market">Market</a>
-        <a href="#tools">AI Tools</a>
-        <a href="#risk">Risk</a>
-        <a href="#smc">SMC</a>
-    </nav>
+  <nav>
+    <a href="#tools">Tools</a>
+    <a href="#gold">Gold</a>
+    <a href="#analysis">Analysis</a>
+  </nav>
 </header>
 
-
 <section class="hero">
-    <h1>AI <span>Trading Tools</span></h1>
-    <p>Smart market analysis, SMC/ICT tools & risk management in one place.</p>
+  <h1>Smart <span>AI Trading Tools</span></h1>
+
+  <p>
+    Analyze the market with powerful trading tools, market structure,
+    technical analysis and smart trading insights.
+  </p>
+
+  <a href="#tools" class="btn">Explore Tools</a>
 </section>
 
+<section class="section" id="tools">
+  <h2>Trading Tools</h2>
 
-<div class="container">
+  <div class="cards">
 
-<section class="market" id="market">
-
-    <div class="market-top">
-
-        <div>
-            <div class="symbol">XAUUSD — GOLD</div>
-            <small style="color:#7d8796;">
-                Gold / US Dollar
-            </small>
-        </div>
-
-        <div>
-            <div class="price" id="goldPrice">2650.00</div>
-            <div class="up">▲ +0.42%</div>
-        </div>
-
+    <div class="card">
+      <h3>📊 Market Structure</h3>
+      <p>
+        Identify Higher High, Higher Low, Lower High and Lower Low structures.
+      </p>
     </div>
 
+    <div class="card">
+      <h3>💎 Order Block</h3>
+      <p>
+        Analyze potential institutional order block zones and price reactions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>⚡ Fair Value Gap</h3>
+      <p>
+        Find potential imbalance and FVG areas for price-action analysis.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🤖 AI Analysis</h3>
+      <p>
+        Get smart market insights based on technical trading concepts.
+      </p>
+    </div>
+
+  </div>
 </section>
 
+<section class="section" id="gold">
+  <h2>🥇 Gold — XAUUSD</h2>
 
-<div class="grid" id="tools">
-
-    <div class="card signal">
-
-        <h2>🤖 AI Market Signal</h2>
-
-        <p>
-            AI-based market direction analysis
-        </p>
-
-        <div class="signal-box">
-
-            <h3 id="signal">BUY</h3>
-
-            <p id="confidence">
-                Confidence: 82%
-            </p>
-
-        </div>
-
-        <button onclick="generateSignal()">
-            Generate AI Analysis
-        </button>
-
+  <div class="chart">
+    <div>
+      <h3>Live Gold Chart</h3>
+      <p style="margin-top:10px;">
+        Live market data connection will be added next.
+      </p>
     </div>
-
-
-    <div class="card">
-
-        <h2>📊 Market Analysis</h2>
-
-        <p id="analysis">
-            Gold is currently showing bullish momentum.
-            Wait for confirmation before entering a trade.
-        </p>
-
-        <button onclick="runAnalysis()">
-            Analyze XAUUSD
-        </button>
-
-    </div>
-
-
-    <div class="card">
-
-        <h2>🎯 Trade Setup</h2>
-
-        <label>Entry Price</label>
-        <input id="entry" type="number" value="2650">
-
-        <label>Stop Loss</label>
-        <input id="sl" type="number" value="2640">
-
-        <label>Take Profit</label>
-        <input id="tp" type="number" value="2670">
-
-        <button onclick="calculateTrade()">
-            Calculate Setup
-        </button>
-
-        <div class="result" id="tradeResult">
-            Risk/Reward: 1 : 2
-        </div>
-
-    </div>
-
-</div>
-
-
-<section class="card" id="smc">
-
-    <h2>🧠 SMC + ICT Trading Tools</h2>
-
-    <p>
-        Identify important Smart Money Concepts structures.
-    </p>
-
-    <div class="tools">
-
-        <div class="tool">
-            <strong>Order Block</strong>
-            Detection
-        </div>
-
-        <div class="tool">
-            <strong>Fair Value Gap</strong>
-            FVG Detection
-        </div>
-
-        <div class="tool">
-            <strong>Liquidity</strong>
-            High / Low
-        </div>
-
-        <div class="tool">
-            <strong>Market Structure</strong>
-            HH / HL / LH / LL
-        </div>
-
-        <div class="tool">
-            <strong>Breaker Block</strong>
-            Detection
-        </div>
-
-        <div class="tool">
-            <strong>Mitigation</strong>
-            Block Detection
-        </div>
-
-    </div>
-
+  </div>
 </section>
 
+<section class="section" id="analysis">
+  <h2>Market Analysis</h2>
 
-<div class="grid" id="risk">
-
-    <div class="card">
-
-        <h2>💰 Risk Calculator</h2>
-
-        <label>Account Balance ($)</label>
-        <input id="balance" type="number" value="1000">
-
-        <label>Risk %</label>
-        <input id="riskPercent" type="number" value="1">
-
-        <label>Stop Loss (Points)</label>
-        <input id="points" type="number" value="100">
-
-        <button onclick="calculateRisk()">
-            Calculate Risk
-        </button>
-
-        <div class="result" id="riskResult">
-            Risk Amount: $10
-        </div>
-
-    </div>
-
+  <div class="cards">
 
     <div class="card">
-
-        <h2>📈 Trading Dashboard</h2>
-
-        <p>
-            Market: <b>XAUUSD</b>
-        </p>
-
-        <p>
-            Trend: <span class="up">Bullish</span>
-        </p>
-
-        <p>
-            Structure: Higher High / Higher Low
-        </p>
-
-        <p>
-            Liquidity: Buy-side liquidity detected
-        </p>
-
-        <p>
-            Session: New York
-        </p>
-
+      <h3>Trend</h3>
+      <p>AI trend analysis module — coming soon.</p>
     </div>
 
-</div>
+    <div class="card">
+      <h3>Support & Resistance</h3>
+      <p>Important market levels will be displayed here.</p>
+    </div>
 
-</div>
+    <div class="card">
+      <h3>Risk Management</h3>
+      <p>Calculate entry, stop loss and take profit levels.</p>
+    </div>
 
+  </div>
+</section>
 
 <footer>
-    © 2026 AI TradeX — Smart Trading Technology
+  © 2026 AI Trading Tools — Built for market analysis.
 </footer>
 
-
-<script>
-
-function generateSignal(){
-
-    const signals = ["BUY","SELL","WAIT"];
-
-    const randomSignal =
-        signals[Math.floor(Math.random()*signals.length)];
-
-    const confidence =
-        Math.floor(Math.random()*20)+75;
-
-    document.getElementById("signal").innerText =
-        randomSignal;
-
-    document.getElementById("confidence").innerText =
-        "Confidence: " + confidence + "%";
-}
-
-
-function runAnalysis(){
-
-    const messages = [
-
-        "Bullish structure detected. Price is forming higher highs and higher lows.",
-
-        "Liquidity zone detected. Wait for confirmation before entering.",
-
-        "Market is near an important supply zone. Risk management is recommended.",
-
-        "Possible bullish continuation after liquidity sweep."
-    ];
-
-    const message =
-        messages[Math.floor(Math.random()*messages.length)];
-
-    document.getElementById("analysis").innerText =
-        message;
-}
-
-
-function calculateTrade(){
-
-    const entry =
-        parseFloat(document.getElementById("entry").value);
-
-    const sl =
-        parseFloat(document.getElementById("sl").value);
-
-    const tp =
-        parseFloat(document.getElementById("tp").value);
-
-    const risk =
-        Math.abs(entry-sl);
-
-    const reward =
-        Math.abs(tp-entry);
-
-    if(risk === 0){
-
-        document.getElementById("tradeResult").innerText =
-            "Please enter a valid Stop Loss.";
-
-        return;
-    }
-
-    const rr =
-        (reward/risk).toFixed(2);
-
-    document.getElementById("tradeResult").innerText =
-        "Risk/Reward: 1 : " + rr;
-}
-
-
-function calculateRisk(){
-
-    const balance =
-        parseFloat(document.getElementById("balance").value);
-
-    const percent =
-        parseFloat(document.getElementById("riskPercent").value);
-
-    const points =
-        parseFloat(document.getElementById("points").value);
-
-    const riskAmount =
-        balance * percent / 100;
-
-    document.getElementById("riskResult").innerHTML =
-        "Risk Amount: $" +
-        riskAmount.toFixed(2) +
-        "<br>Suggested Risk Per Point: $" +
-        (riskAmount/points).toFixed(2);
-}
-
-
-/* Demo Gold price movement */
-
-let gold = 2650;
-
-setInterval(function(){
-
-    const movement =
-        (Math.random()-0.5)*2;
-
-    gold += movement;
-
-    document.getElementById("goldPrice").innerText =
-        gold.toFixed(2);
-
-},2000);
-
-</script>
-
 </body>
-  </html>
+</html>
