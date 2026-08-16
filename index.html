@@ -15,20 +15,20 @@
     }
 
     body {
-      background: #0b1020;
-      color: white;
+      background: #080d19;
+      color: #ffffff;
     }
 
     header {
-      padding: 20px 7%;
+      padding: 18px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #202943;
-      background: #0b1020;
+      background: #0b1222;
+      border-bottom: 1px solid #202b43;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
     }
 
     .logo {
@@ -41,7 +41,7 @@
     }
 
     nav a {
-      color: #c8d0e0;
+      color: #b8c3d8;
       text-decoration: none;
       margin-left: 20px;
     }
@@ -51,12 +51,12 @@
     }
 
     .hero {
-      padding: 80px 7%;
+      padding: 75px 6%;
       text-align: center;
     }
 
     .hero h1 {
-      font-size: 48px;
+      font-size: 46px;
       margin-bottom: 18px;
     }
 
@@ -65,55 +65,68 @@
     }
 
     .hero p {
-      color: #aeb8cc;
-      font-size: 18px;
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
-      line-height: 1.6;
+      color: #aab6ca;
+      font-size: 17px;
+      line-height: 1.7;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 30px;
-      padding: 14px 28px;
+      margin-top: 28px;
+      padding: 13px 25px;
       background: #00e5ff;
       color: #061018;
-      border-radius: 8px;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: bold;
     }
 
     .section {
-      padding: 50px 7%;
+      padding: 45px 6%;
     }
 
     .section h2 {
       text-align: center;
-      margin-bottom: 35px;
-      font-size: 32px;
+      margin-bottom: 30px;
+      font-size: 30px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+      );
+      gap: 18px;
     }
 
     .card {
-      background: #121a2e;
-      border: 1px solid #26314d;
+      background: #111a2d;
+      border: 1px solid #27344f;
       border-radius: 14px;
-      padding: 25px;
+      padding: 23px;
     }
 
     .card h3 {
-      margin-bottom: 12px;
       color: #00e5ff;
+      margin-bottom: 12px;
     }
 
     .card p {
-      color: #aeb8cc;
-      line-height: 1.5;
+      color: #aab6ca;
+      line-height: 1.55;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 11px;
+      border-radius: 20px;
+      background: #18243a;
+      color: #00e5ff;
+      font-size: 12px;
     }
 
     /* LIVE GOLD CHART */
@@ -121,8 +134,8 @@
     .chart-box {
       width: 100%;
       height: 600px;
-      background: #10182b;
-      border: 1px solid #26314d;
+      background: #10182a;
+      border: 1px solid #27344f;
       border-radius: 14px;
       overflow: hidden;
     }
@@ -132,17 +145,92 @@
       height: 100%;
     }
 
-    .tradingview-widget-container__widget {
+    /* SUPPORT / RESISTANCE */
+
+    .level-grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+      );
+      gap: 18px;
+    }
+
+    .level {
+      background: #111a2d;
+      border: 1px solid #27344f;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .support {
+      color: #35e69a;
+    }
+
+    .resistance {
+      color: #ff6577;
+    }
+
+    /* RISK CALCULATOR */
+
+    .calculator {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px;
+      background: #111a2d;
+      border: 1px solid #27344f;
+      border-radius: 16px;
+    }
+
+    .input-group {
+      margin-bottom: 17px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 7px;
+      color: #b9c4d8;
+    }
+
+    .input-group input {
       width: 100%;
-      height: calc(100% - 32px);
+      padding: 12px;
+      background: #0a1120;
+      color: #ffffff;
+      border: 1px solid #30405e;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .calculate {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 8px;
+      background: #00e5ff;
+      color: #061018;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 18px;
+      background: #0b1324;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    .result strong {
+      color: #00e5ff;
     }
 
     footer {
-      text-align: center;
+      margin-top: 30px;
       padding: 30px;
-      border-top: 1px solid #202943;
-      color: #7f8aa3;
-      margin-top: 40px;
+      text-align: center;
+      color: #71809b;
+      border-top: 1px solid #202b43;
     }
 
     @media (max-width: 700px) {
@@ -153,8 +241,7 @@
       }
 
       nav a {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin: 0 7px;
       }
 
       .hero h1 {
@@ -170,186 +257,468 @@
 
 <body>
 
-<header>
+  <!-- HEADER -->
 
-  <div class="logo">
-    AI <span>Trading</span>
-  </div>
+  <header>
 
-  <nav>
-    <a href="#tools">Tools</a>
-    <a href="#gold">Gold</a>
-    <a href="#analysis">Analysis</a>
-  </nav>
-
-</header>
-
-
-<section class="hero">
-
-  <h1>
-    Smart <span>AI Trading Tools</span>
-  </h1>
-
-  <p>
-    Analyze the market with powerful trading tools,
-    market structure, technical analysis and smart
-    trading insights.
-  </p>
-
-  <a href="#gold" class="btn">
-    View Live Gold
-  </a>
-
-</section>
-
-
-<section class="section" id="tools">
-
-  <h2>Trading Tools</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>📊 Market Structure</h3>
-
-      <p>
-        Identify Higher High, Higher Low,
-        Lower High and Lower Low structures.
-      </p>
+    <div class="logo">
+      AI <span>Trading</span>
     </div>
 
+    <nav>
+      <a href="#tools">Tools</a>
+      <a href="#gold">Gold</a>
+      <a href="#analysis">Analysis</a>
+      <a href="#risk">Risk</a>
+    </nav>
 
-    <div class="card">
-      <h3>💎 Order Block</h3>
-
-      <p>
-        Analyze potential institutional
-        order block zones and price reactions.
-      </p>
-    </div>
-
-
-    <div class="card">
-      <h3>⚡ Fair Value Gap</h3>
-
-      <p>
-        Find potential imbalance and FVG
-        areas for price-action analysis.
-      </p>
-    </div>
+  </header>
 
 
-    <div class="card">
-      <h3>🤖 AI Analysis</h3>
+  <!-- HERO -->
 
-      <p>
-        Get smart market insights based
-        on technical trading concepts.
-      </p>
-    </div>
+  <section class="hero">
 
-  </div>
+    <h1>
+      Smart <span>AI Trading Tools</span>
+    </h1>
 
-</section>
+    <p>
+      Advanced trading dashboard for market structure,
+      order blocks, fair value gaps, trend analysis,
+      support and resistance, and risk management.
+    </p>
+
+    <a href="#gold" class="btn">
+      View Live Gold
+    </a>
+
+  </section>
 
 
-<section class="section" id="gold">
+  <!-- TRADING TOOLS -->
 
-  <h2>🥇 Live Gold — XAUUSD</h2>
+  <section class="section" id="tools">
 
-  <div class="chart-box">
+    <h2>Trading Tools</h2>
 
-    <div
-      class="tradingview-widget-container"
-      style="height:100%;width:100%;"
-    >
+    <div class="cards">
 
-      <div
-        class="tradingview-widget-container__widget"
-        style="height:calc(100% - 32px);width:100%;"
-      >
+      <div class="card">
+        <h3>📊 Market Structure</h3>
+
+        <p>
+          Analyze Higher High, Higher Low,
+          Lower High and Lower Low structures.
+        </p>
+
+        <span class="status">
+          Structure
+        </span>
       </div>
 
-      <script
-        type="text/javascript"
-        src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"
-        async
+
+      <div class="card">
+        <h3>💎 Order Block</h3>
+
+        <p>
+          Analyze potential bullish and bearish
+          institutional order-block zones.
+        </p>
+
+        <span class="status">
+          Smart Money
+        </span>
+      </div>
+
+
+      <div class="card">
+        <h3>⚡ Fair Value Gap</h3>
+
+        <p>
+          Identify potential price imbalance
+          and FVG areas.
+        </p>
+
+        <span class="status">
+          Price Action
+        </span>
+      </div>
+
+
+      <div class="card">
+        <h3>📈 Trend Analysis</h3>
+
+        <p>
+          Analyze market direction using
+          price action and structure.
+        </p>
+
+        <span class="status">
+          Trend
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LIVE GOLD -->
+
+  <section class="section" id="gold">
+
+    <h2>🥇 Live Gold — XAUUSD</h2>
+
+    <div class="chart-box">
+
+      <div
+        class="tradingview-widget-container"
+        style="height:100%;width:100%;"
       >
 
-      {
-        "autosize": true,
-        "symbol": "OANDA:XAUUSD",
-        "interval": "15",
-        "timezone": "Asia/Kolkata",
-        "theme": "dark",
-        "style": "1",
-        "locale": "en",
-        "allow_symbol_change": true,
-        "calendar": false,
-        "support_host": "https://www.tradingview.com"
+        <div
+          class="tradingview-widget-container__widget"
+          style="height:calc(100% - 32px);width:100%;"
+        ></div>
+
+        <script
+          type="text/javascript"
+          src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"
+          async
+        >
+        {
+          "autosize": true,
+          "symbol": "OANDA:XAUUSD",
+          "interval": "15",
+          "timezone": "Asia/Kolkata",
+          "theme": "dark",
+          "style": "1",
+          "locale": "en",
+          "allow_symbol_change": true,
+          "calendar": false,
+          "support_host": "https://www.tradingview.com"
+        }
+        </script>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MARKET ANALYSIS -->
+
+  <section class="section" id="analysis">
+
+    <h2>Market Analysis</h2>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>📈 Trend</h3>
+
+        <p>
+          Trend analysis module.
+        </p>
+
+        <span class="status">
+          Ready
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>🏗️ Market Structure</h3>
+
+        <p>
+          HH, HL, LH and LL structure analysis.
+        </p>
+
+        <span class="status">
+          Ready
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>💎 Order Block</h3>
+
+        <p>
+          Bullish and bearish order-block analysis.
+        </p>
+
+        <span class="status">
+          Ready
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>⚡ Fair Value Gap</h3>
+
+        <p>
+          FVG and imbalance analysis.
+        </p>
+
+        <span class="status">
+          Ready
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SUPPORT & RESISTANCE -->
+
+  <section class="section">
+
+    <h2>🎯 Support & Resistance</h2>
+
+    <div class="level-grid">
+
+      <div class="level">
+
+        <h3 class="support">
+          Support
+        </h3>
+
+        <p style="color:#aab6ca;margin-top:10px;">
+          Enter or identify an important
+          support level from the chart.
+        </p>
+
+      </div>
+
+
+      <div class="level">
+
+        <h3 class="resistance">
+          Resistance
+        </h3>
+
+        <p style="color:#aab6ca;margin-top:10px;">
+          Enter or identify an important
+          resistance level from the chart.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RISK MANAGEMENT -->
+
+  <section class="section" id="risk">
+
+    <h2>🛡️ Risk Management Calculator</h2>
+
+    <div class="calculator">
+
+      <div class="input-group">
+
+        <label>
+          Account Balance ($)
+        </label>
+
+        <input
+          type="number"
+          id="balance"
+          value="1000"
+          min="0"
+        >
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label>
+          Risk Percentage (%)
+        </label>
+
+        <input
+          type="number"
+          id="riskPercent"
+          value="1"
+          min="0"
+          step="0.1"
+        >
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label>
+          Entry Price
+        </label>
+
+        <input
+          type="number"
+          id="entry"
+          placeholder="Example: 3400"
+          step="0.01"
+        >
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label>
+          Stop Loss Price
+        </label>
+
+        <input
+          type="number"
+          id="stop"
+          placeholder="Example: 3390"
+          step="0.01"
+        >
+
+      </div>
+
+
+      <button
+        class="calculate"
+        onclick="calculateRisk()"
+      >
+        Calculate Risk
+      </button>
+
+
+      <div class="result" id="riskResult">
+
+        Enter your trade details and
+        click Calculate Risk.
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 AI Trading Tools —
+    Built for market analysis.
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function calculateRisk() {
+
+      const balance =
+        parseFloat(
+          document.getElementById("balance").value
+        );
+
+      const riskPercent =
+        parseFloat(
+          document.getElementById("riskPercent").value
+        );
+
+      const entry =
+        parseFloat(
+          document.getElementById("entry").value
+        );
+
+      const stop =
+        parseFloat(
+          document.getElementById("stop").value
+        );
+
+
+      if (
+        isNaN(balance) ||
+        isNaN(riskPercent) ||
+        isNaN(entry) ||
+        isNaN(stop)
+      ) {
+
+        document.getElementById("riskResult").innerHTML =
+          "Please enter all trade details.";
+
+        return;
       }
 
-      </script>
 
-    </div>
+      if (balance <= 0 || riskPercent <= 0) {
 
-  </div>
+        document.getElementById("riskResult").innerHTML =
+          "Balance and risk percentage must be greater than zero.";
 
-</section>
-
-
-<section class="section" id="analysis">
-
-  <h2>Market Analysis</h2>
-
-  <div class="cards">
-
-    <div class="card">
-
-      <h3>📈 Trend</h3>
-
-      <p>
-        AI trend analysis module will be
-        connected in the next update.
-      </p>
-
-    </div>
+        return;
+      }
 
 
-    <div class="card">
+      if (entry === stop) {
 
-      <h3>🎯 Support & Resistance</h3>
+        document.getElementById("riskResult").innerHTML =
+          "Entry and Stop Loss cannot be the same.";
 
-      <p>
-        Important market levels will be
-        displayed here.
-      </p>
-
-    </div>
+        return;
+      }
 
 
-    <div class="card">
-
-      <h3>🛡️ Risk Management</h3>
-
-      <p>
-        Calculate entry, stop loss and
-        take profit levels.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
+      const riskAmount =
+        balance * (riskPercent / 100);
 
 
-<footer>
+      const priceDistance =
+        Math.abs(entry - stop);
 
-  © 2026 AI Trading Tools — Built for market analysis.
 
-</footer>
+      const positionSize =
+        riskAmount / priceDistance;
+
+
+      document.getElementById("riskResult").innerHTML =
+
+        "Maximum Risk: <strong>$" +
+        riskAmount.toFixed(2) +
+        "</strong><br>" +
+
+        "Entry Price: <strong>" +
+        entry.toFixed(2) +
+        "</strong><br>" +
+
+        "Stop Loss: <strong>" +
+        stop.toFixed(2) +
+        "</strong><br>" +
+
+        "Price Distance: <strong>" +
+        priceDistance.toFixed(2) +
+        "</strong><br>" +
+
+        "Calculated Position Size: <strong>" +
+        positionSize.toFixed(4) +
+        "</strong>";
+
+    }
+
+  </script>
 
 </body>
-</html>
+    </html>
