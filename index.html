@@ -1,10 +1,9 @@
-AI Trading Tools — Index.html
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>AI Trading Tools</title>
 
   <style>
@@ -27,6 +26,9 @@ AI Trading Tools — Index.html
       align-items: center;
       border-bottom: 1px solid #202943;
       background: #0b1020;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .logo {
@@ -42,6 +44,10 @@ AI Trading Tools — Index.html
       color: #c8d0e0;
       text-decoration: none;
       margin-left: 20px;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
     }
 
     .hero {
@@ -110,16 +116,25 @@ AI Trading Tools — Index.html
       line-height: 1.5;
     }
 
-    .chart {
-      height: 320px;
+    /* LIVE GOLD CHART */
+
+    .chart-box {
+      width: 100%;
+      height: 600px;
       background: #10182b;
       border: 1px solid #26314d;
       border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #9da8bd;
+      overflow: hidden;
+    }
+
+    .tradingview-widget-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .tradingview-widget-container__widget {
+      width: 100%;
+      height: calc(100% - 32px);
     }
 
     footer {
@@ -129,106 +144,211 @@ AI Trading Tools — Index.html
       color: #7f8aa3;
       margin-top: 40px;
     }
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .chart-box {
+        height: 500px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">AI <span>Trading</span></div>
+
+  <div class="logo">
+    AI <span>Trading</span>
+  </div>
 
   <nav>
     <a href="#tools">Tools</a>
     <a href="#gold">Gold</a>
     <a href="#analysis">Analysis</a>
   </nav>
+
 </header>
 
+
 <section class="hero">
-  <h1>Smart <span>AI Trading Tools</span></h1>
+
+  <h1>
+    Smart <span>AI Trading Tools</span>
+  </h1>
 
   <p>
-    Analyze the market with powerful trading tools, market structure,
-    technical analysis and smart trading insights.
+    Analyze the market with powerful trading tools,
+    market structure, technical analysis and smart
+    trading insights.
   </p>
 
-  <a href="#tools" class="btn">Explore Tools</a>
+  <a href="#gold" class="btn">
+    View Live Gold
+  </a>
+
 </section>
 
+
 <section class="section" id="tools">
+
   <h2>Trading Tools</h2>
 
   <div class="cards">
 
     <div class="card">
       <h3>📊 Market Structure</h3>
+
       <p>
-        Identify Higher High, Higher Low, Lower High and Lower Low structures.
+        Identify Higher High, Higher Low,
+        Lower High and Lower Low structures.
       </p>
     </div>
+
 
     <div class="card">
       <h3>💎 Order Block</h3>
+
       <p>
-        Analyze potential institutional order block zones and price reactions.
+        Analyze potential institutional
+        order block zones and price reactions.
       </p>
     </div>
+
 
     <div class="card">
       <h3>⚡ Fair Value Gap</h3>
+
       <p>
-        Find potential imbalance and FVG areas for price-action analysis.
+        Find potential imbalance and FVG
+        areas for price-action analysis.
       </p>
     </div>
+
 
     <div class="card">
       <h3>🤖 AI Analysis</h3>
+
       <p>
-        Get smart market insights based on technical trading concepts.
+        Get smart market insights based
+        on technical trading concepts.
       </p>
     </div>
 
   </div>
+
 </section>
+
 
 <section class="section" id="gold">
-  <h2>🥇 Gold — XAUUSD</h2>
 
-  <div class="chart">
-    <div>
-      <h3>Live Gold Chart</h3>
-      <p style="margin-top:10px;">
-        Live market data connection will be added next.
-      </p>
+  <h2>🥇 Live Gold — XAUUSD</h2>
+
+  <div class="chart-box">
+
+    <div
+      class="tradingview-widget-container"
+      style="height:100%;width:100%;"
+    >
+
+      <div
+        class="tradingview-widget-container__widget"
+        style="height:calc(100% - 32px);width:100%;"
+      >
+      </div>
+
+      <script
+        type="text/javascript"
+        src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"
+        async
+      >
+
+      {
+        "autosize": true,
+        "symbol": "OANDA:XAUUSD",
+        "interval": "15",
+        "timezone": "Asia/Kolkata",
+        "theme": "dark",
+        "style": "1",
+        "locale": "en",
+        "allow_symbol_change": true,
+        "calendar": false,
+        "support_host": "https://www.tradingview.com"
+      }
+
+      </script>
+
     </div>
+
   </div>
+
 </section>
 
+
 <section class="section" id="analysis">
+
   <h2>Market Analysis</h2>
 
   <div class="cards">
 
     <div class="card">
-      <h3>Trend</h3>
-      <p>AI trend analysis module — coming soon.</p>
+
+      <h3>📈 Trend</h3>
+
+      <p>
+        AI trend analysis module will be
+        connected in the next update.
+      </p>
+
     </div>
 
-    <div class="card">
-      <h3>Support & Resistance</h3>
-      <p>Important market levels will be displayed here.</p>
-    </div>
 
     <div class="card">
-      <h3>Risk Management</h3>
-      <p>Calculate entry, stop loss and take profit levels.</p>
+
+      <h3>🎯 Support & Resistance</h3>
+
+      <p>
+        Important market levels will be
+        displayed here.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>🛡️ Risk Management</h3>
+
+      <p>
+        Calculate entry, stop loss and
+        take profit levels.
+      </p>
+
     </div>
 
   </div>
+
 </section>
 
+
 <footer>
+
   © 2026 AI Trading Tools — Built for market analysis.
+
 </footer>
 
 </body>
