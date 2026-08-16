@@ -719,6 +719,31 @@
     }
 
   </script>
+<script>
+function detectMarketStructure(candles) {
+  if (!candles || candles.length < 5) {
+    return "Not enough candle data";
+  }
 
+  const highs = candles.map(c => c.high);
+  const lows = candles.map(c => c.low);
+
+  const lastHigh = highs[highs.length - 1];
+  const previousHigh = highs[highs.length - 2];
+
+  const lastLow = lows[lows.length - 1];
+  const previousLow = lows[lows.length - 2];
+
+  if (lastHigh > previousHigh && lastLow > previousLow) {
+    return "Bullish Structure — HH / HL";
+  }
+
+  if (lastHigh < previousHigh && lastLow < previousLow) {
+    return "Bearish Structure — LH / LL";
+  }
+
+  return "Sideways / Range";
+}
+</script>
 </body>
     </html>
