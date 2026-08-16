@@ -745,5 +745,23 @@ function detectMarketStructure(candles) {
   return "Sideways / Range";
 }
 </script>
-</body>
+<script>
+async function getMarketData(symbol = "XAUUSD") {
+  try {
+    const response = await fetch(
+      `/api/market.js?symbol=${symbol}&interval=15min`
+    );
+
+    const data = await response.json();
+
+    console.log("Twelve Data:", data);
+
+    return data;
+  } catch (error) {
+    console.error("Market data error:", error);
+  }
+}
+
+getMarketData("XAUUSD");
+</script></body>
     </html>
